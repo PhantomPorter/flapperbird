@@ -18,14 +18,24 @@
 CMAKE_ADDR2LINE:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-addr2line
 
 //Path to a program.
-CMAKE_AR:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ar
+CMAKE_AR:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar
+
+//Path to a program.
+CMAKE_ASM_COMPILER:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc
+
+CMAKE_ASM_STANDARD_INCLUDE_DIRECTORIES:STRING=/opt/devkitpro/libogc/include
+
+CMAKE_ASM_STANDARD_LIBRARIES:STRING=-lwiiuse -lbte -logc -lm
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
+
+//CXX compiler
+CMAKE_CXX_COMPILER:STRING=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -35,19 +45,27 @@ CMAKE_CXX_COMPILER_AR:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar
 // for the GCC compiler
 CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib
 
-CMAKE_CXX_FLAGS:STRING=-mrvl -mcpu=750 -meabi -mhard-float
+//Flags used by the CXX compiler during all build types.
+CMAKE_CXX_FLAGS:STRING=-mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO
 
 //Flags used by the CXX compiler during DEBUG builds.
-CMAKE_CXX_FLAGS_DEBUG:STRING=-g
+CMAKE_CXX_FLAGS_DEBUG:STRING=-g -Og -DDEBUG
 
 //Flags used by the CXX compiler during MINSIZEREL builds.
-CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-g -Oz -DNDEBUG
 
 //Flags used by the CXX compiler during RELEASE builds.
-CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+CMAKE_CXX_FLAGS_RELEASE:STRING=-g -O2 -DNDEBUG
 
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-g -O2 -DNDEBUG
+
+CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES:STRING=/opt/devkitpro/libogc/include
+
+CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lwiiuse -lbte -logc -lm
+
+//C compiler
+CMAKE_C_COMPILER:STRING=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -57,25 +75,30 @@ CMAKE_C_COMPILER_AR:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar
 // for the GCC compiler
 CMAKE_C_COMPILER_RANLIB:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib
 
-CMAKE_C_FLAGS:STRING=-mrvl -mcpu=750 -meabi -mhard-float
+//Flags used by the C compiler during all build types.
+CMAKE_C_FLAGS:STRING=-mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO
 
 //Flags used by the C compiler during DEBUG builds.
-CMAKE_C_FLAGS_DEBUG:STRING=-g
+CMAKE_C_FLAGS_DEBUG:STRING=-g -Og -DDEBUG
 
 //Flags used by the C compiler during MINSIZEREL builds.
-CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-g -Oz -DNDEBUG
 
 //Flags used by the C compiler during RELEASE builds.
-CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+CMAKE_C_FLAGS_RELEASE:STRING=-g -O2 -DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-g -O2 -DNDEBUG
+
+CMAKE_C_STANDARD_INCLUDE_DIRECTORIES:STRING=/opt/devkitpro/libogc/include
+
+CMAKE_C_STANDARD_LIBRARIES:STRING=-lwiiuse -lbte -logc -lm
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
 //Flags used by the linker during all build types.
-CMAKE_EXE_LINKER_FLAGS:STRING=
+CMAKE_EXE_LINKER_FLAGS:STRING=-L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib
 
 //Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
@@ -96,7 +119,7 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/pkgRedirects
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/usr/local
+CMAKE_INSTALL_PREFIX:PATH=/opt/devkitpro/portlibs/wii
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ld
@@ -149,7 +172,7 @@ CMAKE_PROJECT_NAME:STATIC=WiiHomebrewApp
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ranlib
+CMAKE_RANLIB:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib
 
 //Path to a program.
 CMAKE_READELF:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-readelf
@@ -207,8 +230,8 @@ CMAKE_STRIP:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-strip
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=wii.cmake
+//The CMake toolchain file
+CMAKE_TOOLCHAIN_FILE:FILEPATH=/opt/devkitpro/cmake/Wii.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -216,11 +239,26 @@ CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=wii.cmake
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//devkitPPC directory
-DEVKITPPC:PATH=/opt/devkitpro/devkitPPC
+//Path to a program.
+DKP_BIN2S:FILEPATH=/opt/devkitpro/tools/bin/bin2s
 
-//devkitPro root directory
-DEVKITPRO:PATH=/opt/devkitpro
+//Path to a program.
+DKP_NM:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-nm
+
+//Path to a program.
+DKP_OBJCOPY:FILEPATH=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-objcopy
+
+//Path to a program.
+ELF2DOL_EXE:FILEPATH=/opt/devkitpro/tools/bin/elf2dol
+
+//Path to a program.
+GCDSPTOOL_EXE:FILEPATH=/opt/devkitpro/tools/bin/gcdsptool
+
+//Path to a program.
+GXTEXCONV_EXE:FILEPATH=/opt/devkitpro/tools/bin/gxtexconv
+
+//Path to a program.
+PKG_CONFIG_EXECUTABLE:FILEPATH=/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-pkg-config
 
 //Value Computed by CMake
 WiiHomebrewApp_BINARY_DIR:STATIC=/home/akilang/Documents/wii stuff/flapperbird/build
@@ -236,6 +274,8 @@ WiiHomebrewApp_SOURCE_DIR:STATIC=/home/akilang/Documents/wii stuff/flapperbird
 # INTERNAL cache entries
 ########################
 
+//Shared libs not available
+BUILD_SHARED_LIBS:INTERNAL=OFF
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -256,6 +296,8 @@ CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
+//ADVANCED property for variable: CMAKE_CXX_COMPILER
+CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
 CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
@@ -270,6 +312,8 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
 CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB

@@ -3,12 +3,12 @@ set(CMAKE_HOST_SYSTEM_NAME "Linux")
 set(CMAKE_HOST_SYSTEM_VERSION "7.0.12-1-cachyos")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/home/akilang/Documents/wii stuff/flapperbird/wii.cmake")
+include("/opt/devkitpro/cmake/Wii.cmake")
 
-set(CMAKE_SYSTEM "Generic")
-set(CMAKE_SYSTEM_NAME "Generic")
-set(CMAKE_SYSTEM_VERSION "")
-set(CMAKE_SYSTEM_PROCESSOR "powerpc")
+set(CMAKE_SYSTEM "NintendoWii-1")
+set(CMAKE_SYSTEM_NAME "NintendoWii")
+set(CMAKE_SYSTEM_VERSION "1")
+set(CMAKE_SYSTEM_PROCESSOR "ppc")
 
 set(CMAKE_CROSSCOMPILING "TRUE")
 

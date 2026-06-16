@@ -4,7 +4,13 @@
         {
             "label": "CMake Configure (Wii)",
             "type": "shell",
-            "command": "cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=wii.cmake",
+            "command": "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-cmake -B build -S .",
+            "options": {
+                "env": {
+                    "DEVKITPRO": "/opt/devkitpro",
+                    "DEVKITPPC": "/opt/devkitpro/devkitPPC"
+                }
+            },
             "problemMatcher": [],
             "group": "build"
         },

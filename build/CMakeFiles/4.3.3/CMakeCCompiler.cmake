@@ -19,14 +19,14 @@ set(CMAKE_C_SIMULATE_ID "")
 set(CMAKE_C_COMPILER_FRONTEND_VARIANT "GNU")
 set(CMAKE_C_COMPILER_APPLE_SYSROOT "")
 set(CMAKE_C_SIMULATE_VERSION "")
-set(CMAKE_C_COMPILER_ARCHITECTURE_ID "")
+set(CMAKE_C_COMPILER_ARCHITECTURE_ID "ppc")
 
 
 
 
-set(CMAKE_AR "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ar")
+set(CMAKE_AR "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar")
 set(CMAKE_C_COMPILER_AR "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar")
-set(CMAKE_RANLIB "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ranlib")
+set(CMAKE_RANLIB "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib")
 set(CMAKE_C_COMPILER_RANLIB "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib")
 set(CMAKE_LINKER "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ld")
 set(CMAKE_LINKER_LINK "")
@@ -53,9 +53,9 @@ set(CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED )
 set(CMAKE_C_LINKER_PUSHPOP_STATE_SUPPORTED )
 
 # Save compiler ABI information.
-set(CMAKE_C_SIZEOF_DATA_PTR "")
-set(CMAKE_C_COMPILER_ABI "")
-set(CMAKE_C_BYTE_ORDER "")
+set(CMAKE_C_SIZEOF_DATA_PTR "4")
+set(CMAKE_C_COMPILER_ABI "ELF")
+set(CMAKE_C_BYTE_ORDER "BIG_ENDIAN")
 set(CMAKE_C_LIBRARY_ARCHITECTURE "")
 
 if(CMAKE_C_SIZEOF_DATA_PTR)
@@ -80,6 +80,6 @@ endif()
 
 
 set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed;/opt/devkitpro/devkitPPC/powerpc-eabi/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;sysbase;c;gcc")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/lib")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "wiiuse;bte;ogc;m;gcc;sysbase;c;gcc")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/opt/devkitpro/libogc/lib/wii;/opt/devkitpro/portlibs/wii/lib;/opt/devkitpro/portlibs/ppc/lib;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

@@ -117,41 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named WiiHomebrewApp.elf
+# Target rules for targets named WiiHomebrewApp
 
 # Build rule for target.
-WiiHomebrewApp.elf: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WiiHomebrewApp.elf
-.PHONY : WiiHomebrewApp.elf
+WiiHomebrewApp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WiiHomebrewApp
+.PHONY : WiiHomebrewApp
 
 # fast build rule for target.
-WiiHomebrewApp.elf/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.elf.dir/build.make CMakeFiles/WiiHomebrewApp.elf.dir/build
-.PHONY : WiiHomebrewApp.elf/fast
-
-source/main.obj: source/main.c.obj
-.PHONY : source/main.obj
+WiiHomebrewApp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.dir/build.make CMakeFiles/WiiHomebrewApp.dir/build
+.PHONY : WiiHomebrewApp/fast
 
 # target to build an object file
-source/main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.elf.dir/build.make CMakeFiles/WiiHomebrewApp.elf.dir/source/main.c.obj
-.PHONY : source/main.c.obj
-
-source/main.i: source/main.c.i
-.PHONY : source/main.i
+source/main.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.dir/build.make CMakeFiles/WiiHomebrewApp.dir/source/main.o
+.PHONY : source/main.o
 
 # target to preprocess a source file
-source/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.elf.dir/build.make CMakeFiles/WiiHomebrewApp.elf.dir/source/main.c.i
-.PHONY : source/main.c.i
-
-source/main.s: source/main.c.s
-.PHONY : source/main.s
+source/main.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.dir/build.make CMakeFiles/WiiHomebrewApp.dir/source/main.i
+.PHONY : source/main.i
 
 # target to generate assembly for a file
-source/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.elf.dir/build.make CMakeFiles/WiiHomebrewApp.elf.dir/source/main.c.s
-.PHONY : source/main.c.s
+source/main.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WiiHomebrewApp.dir/build.make CMakeFiles/WiiHomebrewApp.dir/source/main.s
+.PHONY : source/main.s
 
 # Help Target
 help:
@@ -161,8 +152,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... WiiHomebrewApp.elf"
-	@echo "... source/main.obj"
+	@echo "... WiiHomebrewApp"
+	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
 .PHONY : help

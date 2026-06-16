@@ -1,0 +1,48 @@
+# ==========================================
+# CMake Build Artifacts
+# ==========================================
+build/
+CMakeCache.txt
+CMakeFiles/
+CMakeSettings.json
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
+
+# ==========================================
+# devkitPro / Wii Compilation Outputs
+# ==========================================
+*.elf
+*.dol
+*.map
+*.org
+*.gdb
+*.vct
+
+# ==========================================
+# Visual Studio Code & IDEs
+# ==========================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/c_cpp_properties.json
+.history/
+*.code-workspace
+
+# ==========================================
+# Dolphin Emulator & Debugger Temp Files
+# ==========================================
+*.map
+*.log
+dvd_root/
+user/
+
+# ==========================================
+# OS Generated Files
+# ==========================================
+.DS_Store
+Thumbs.db
+*.swp
+*~

@@ -52,39 +52,39 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-...
-
----
-events:
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:207 (message)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      The target system is: Generic -  - powerpc
-      The host system is: Linux - 7.0.12-1-cachyos - x86_64
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:53 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_MAKE_PROGRAM"
+    variable: "CMAKE_ASM_COMPILER"
     description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: true
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "gmake"
-      - "make"
-      - "smake"
+      - "powerpc-eabi-gcc"
     candidate_directories:
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -97,23 +97,7 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
-    searched_directories:
-      - "/home/akilang/.wakatime/gmake"
-      - "/home/akilang/wpilib/2026/jdk/bin/gmake"
-      - "/usr/local/bin/gmake"
-      - "/usr/bin/gmake"
-      - "/bin/gmake"
-      - "/usr/local/sbin/gmake"
-      - "/var/lib/flatpak/exports/bin/gmake"
-      - "/usr/lib/jvm/default/bin/gmake"
-      - "/usr/bin/site_perl/gmake"
-      - "/usr/bin/vendor_perl/gmake"
-      - "/usr/bin/core_perl/gmake"
-      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/gmake"
-      - "/home/akilang/.wakatime/make"
-      - "/home/akilang/wpilib/2026/jdk/bin/make"
-      - "/usr/local/bin/make"
-    found: "/usr/bin/make"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc"
     search_context:
       ENV{PATH}:
         - "/home/akilang/.wakatime"
@@ -129,32 +113,70 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:54 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
       - "CMakeLists.txt:2 (project)"
-    mode: "file"
-    variable: "src_in"
-    description: "Path to a file."
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: true
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "CMakeCCompilerId.c.in"
+      - "powerpc-eabi-gcc"
     candidate_directories:
-      - "/usr/share/cmake/Modules/"
-    found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc"
     search_context:
       ENV{PATH}:
         - "/home/akilang/.wakatime"
@@ -170,115 +192,57 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc 
-      Build flags: -mrvl;-mcpu=750;-meabi;-mhard-float
-      Id flags:  
-      
-      The output was:
-      0
-      /opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol __app_start; defaulting to 80003f00
-      
-      
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
-      
-      The C compiler identification could not be found in:
-        /home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/4.3.3/CompilerIdC/a.out
-      
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:55 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
       - "CMakeLists.txt:2 (project)"
-    mode: "file"
-    variable: "src_in"
-    description: "Path to a file."
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: true
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "CMakeCCompilerId.c.in"
-    candidate_directories:
-      - "/usr/share/cmake/Modules/"
-    found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
-    search_context:
-      ENV{PATH}:
-        - "/home/akilang/.wakatime"
-        - "/home/akilang/wpilib/2026/jdk/bin"
-        - "/home/akilang/.wakatime"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc 
-      Build flags: -mrvl;-mcpu=750;-meabi;-mhard-float
-      Id flags: -c 
-      
-      The output was:
-      0
-      
-      
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
-      
-      The C compiler identification is GNU, found in:
-        /home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/4.3.3/CompilerIdC/CMakeCCompilerId.o
-      
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_AR"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "powerpc-eabi-ar"
-      - "ar"
+      - "powerpc-eabi-g++"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -291,7 +255,7 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
-    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ar"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++"
     search_context:
       ENV{PATH}:
         - "/home/akilang/.wakatime"
@@ -307,44 +271,11 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_RANLIB"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "powerpc-eabi-ranlib"
-      - "ranlib"
-    candidate_directories:
-      - "/opt/devkitpro/devkitPPC/bin/"
-      - "/home/akilang/.wakatime/"
-      - "/home/akilang/wpilib/2026/jdk/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
-    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-ranlib"
-    search_context:
-      ENV{PATH}:
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
         - "/home/akilang/.wakatime"
         - "/home/akilang/wpilib/2026/jdk/bin"
         - "/home/akilang/.wakatime"
@@ -358,63 +289,14 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_STRIP"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "powerpc-eabi-strip"
-      - "strip"
-    candidate_directories:
-      - "/opt/devkitpro/devkitPPC/bin/"
-      - "/home/akilang/.wakatime/"
-      - "/home/akilang/wpilib/2026/jdk/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
-    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-strip"
-    search_context:
-      ENV{PATH}:
-        - "/home/akilang/.wakatime"
-        - "/home/akilang/wpilib/2026/jdk/bin"
-        - "/home/akilang/.wakatime"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:56 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
@@ -422,16 +304,24 @@ events:
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
       - "powerpc-eabi-ld"
-      - "ld"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -460,29 +350,57 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:57 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_NM"
+    variable: "CMAKE_AR"
     description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "powerpc-eabi-nm"
-      - "nm"
+      - "powerpc-eabi-gcc-ar"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -495,7 +413,7 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
-    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-nm"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar"
     search_context:
       ENV{PATH}:
         - "/home/akilang/.wakatime"
@@ -511,29 +429,57 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:58 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_OBJDUMP"
+    variable: "CMAKE_RANLIB"
     description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "powerpc-eabi-objdump"
-      - "objdump"
+      - "powerpc-eabi-gcc-ranlib"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -546,7 +492,7 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
-    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-objdump"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib"
     search_context:
       ENV{PATH}:
         - "/home/akilang/.wakatime"
@@ -562,29 +508,136 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:59 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_OBJCOPY"
+    variable: "CMAKE_STRIP"
     description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "powerpc-eabi-strip"
+    candidate_directories:
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:60 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "DKP_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
       - "powerpc-eabi-objcopy"
-      - "objcopy"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -613,7 +666,1024 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:61 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "DKP_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "powerpc-eabi-nm"
+    candidate_directories:
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/devkitpro/cmake/dkp-toolchain-common.cmake:64 (find_program)"
+      - "/opt/devkitpro/cmake/devkitPPC.cmake:6 (__dkp_toolchain)"
+      - "/opt/devkitpro/cmake/ogc-common.cmake:16 (include)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "DKP_BIN2S"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "bin2s"
+    candidate_directories:
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/tools/bin/bin2s"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/devkitpro/cmake/ogc-common.cmake:27 (find_program)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "PKG_CONFIG_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "powerpc-eabi-pkg-config"
+    candidate_directories:
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-pkg-config"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/devkitpro/cmake/ogc-common.cmake:32 (find_program)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "ELF2DOL_EXE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "elf2dol"
+    candidate_directories:
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/tools/bin/elf2dol"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/devkitpro/cmake/ogc-common.cmake:33 (find_program)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "GCDSPTOOL_EXE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcdsptool"
+    candidate_directories:
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/tools/bin/gcdsptool"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/devkitpro/cmake/ogc-common.cmake:34 (find_program)"
+      - "/opt/devkitpro/cmake/Wii.cmake:7 (include)"
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:146 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "GXTEXCONV_EXE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gxtexconv"
+    candidate_directories:
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/tools/bin/gxtexconv"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:207 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: NintendoWii - 1 - ppc
+      The host system is: Linux - 7.0.12-1-cachyos - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    searched_directories:
+      - "/opt/devkitpro/portlibs/wii/bin/gmake"
+      - "/opt/devkitpro/portlibs/wii/sbin/gmake"
+      - "/opt/devkitpro/portlibs/wii/gmake"
+      - "/opt/devkitpro/portlibs/ppc/bin/gmake"
+      - "/opt/devkitpro/portlibs/ppc/sbin/gmake"
+      - "/opt/devkitpro/portlibs/ppc/gmake"
+      - "/opt/devkitpro/libogc/bin/gmake"
+      - "/opt/devkitpro/libogc/sbin/gmake"
+      - "/opt/devkitpro/libogc/gmake"
+      - "/opt/devkitpro/devkitPPC/bin/gmake"
+      - "/opt/devkitpro/devkitPPC/sbin/gmake"
+      - "/opt/devkitpro/devkitPPC/gmake"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/gmake"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/gmake"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/gmake"
+      - "/opt/devkitpro/tools/bin/gmake"
+      - "/opt/devkitpro/tools/sbin/gmake"
+      - "/opt/devkitpro/tools/gmake"
+      - "/home/akilang/.wakatime/gmake"
+      - "/home/akilang/wpilib/2026/jdk/bin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/bin/gmake"
+      - "/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/var/lib/flatpak/exports/bin/gmake"
+      - "/usr/lib/jvm/default/bin/gmake"
+      - "/usr/bin/site_perl/gmake"
+      - "/usr/bin/vendor_perl/gmake"
+      - "/usr/bin/core_perl/gmake"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/gmake"
+      - "/opt/devkitpro/portlibs/wii/bin/make"
+      - "/opt/devkitpro/portlibs/wii/sbin/make"
+      - "/opt/devkitpro/portlibs/wii/make"
+      - "/opt/devkitpro/portlibs/ppc/bin/make"
+      - "/opt/devkitpro/portlibs/ppc/sbin/make"
+      - "/opt/devkitpro/portlibs/ppc/make"
+      - "/opt/devkitpro/libogc/bin/make"
+      - "/opt/devkitpro/libogc/sbin/make"
+      - "/opt/devkitpro/libogc/make"
+      - "/opt/devkitpro/devkitPPC/bin/make"
+      - "/opt/devkitpro/devkitPPC/sbin/make"
+      - "/opt/devkitpro/devkitPPC/make"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/make"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/make"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/make"
+      - "/opt/devkitpro/tools/bin/make"
+      - "/opt/devkitpro/tools/sbin/make"
+      - "/opt/devkitpro/tools/make"
+      - "/home/akilang/.wakatime/make"
+      - "/home/akilang/wpilib/2026/jdk/bin/make"
+      - "/usr/local/bin/make"
+    found: "/usr/bin/make"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/usr/share/cmake/Modules/"
+      - "/opt/devkitpro/cmake/"
+    found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      /opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 018000b8
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/4.3.3/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "powerpc-eabi-nm"
+      - "nm"
+    candidate_directories:
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "powerpc-eabi-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "powerpc-eabi-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
+      - "/home/akilang/.wakatime/"
+      - "/home/akilang/wpilib/2026/jdk/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
+    found: "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -628,7 +1698,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -636,6 +1706,24 @@ events:
       - "readelf"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -664,7 +1752,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -679,7 +1787,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -687,6 +1795,24 @@ events:
       - "dlltool"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -701,6 +1827,24 @@ events:
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/libogc/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-dlltool"
+      - "/opt/devkitpro/tools/powerpc-eabi-dlltool"
       - "/home/akilang/.wakatime/powerpc-eabi-dlltool"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-dlltool"
       - "/usr/local/bin/powerpc-eabi-dlltool"
@@ -714,6 +1858,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-dlltool"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-dlltool"
       - "/opt/devkitpro/devkitPPC/bin/dlltool"
+      - "/opt/devkitpro/portlibs/wii/bin/dlltool"
+      - "/opt/devkitpro/portlibs/wii/sbin/dlltool"
+      - "/opt/devkitpro/portlibs/wii/dlltool"
+      - "/opt/devkitpro/portlibs/ppc/bin/dlltool"
+      - "/opt/devkitpro/portlibs/ppc/sbin/dlltool"
+      - "/opt/devkitpro/portlibs/ppc/dlltool"
+      - "/opt/devkitpro/libogc/bin/dlltool"
+      - "/opt/devkitpro/libogc/sbin/dlltool"
+      - "/opt/devkitpro/libogc/dlltool"
+      - "/opt/devkitpro/devkitPPC/bin/dlltool"
+      - "/opt/devkitpro/devkitPPC/sbin/dlltool"
+      - "/opt/devkitpro/devkitPPC/dlltool"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/dlltool"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/dlltool"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/dlltool"
+      - "/opt/devkitpro/tools/bin/dlltool"
+      - "/opt/devkitpro/tools/sbin/dlltool"
+      - "/opt/devkitpro/tools/dlltool"
       - "/home/akilang/.wakatime/dlltool"
       - "/home/akilang/wpilib/2026/jdk/bin/dlltool"
       - "/usr/local/bin/dlltool"
@@ -742,7 +1904,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -757,7 +1939,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -765,6 +1947,24 @@ events:
       - "addr2line"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -793,7 +1993,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -808,7 +2028,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -816,6 +2036,24 @@ events:
       - "tapi"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -830,6 +2068,24 @@ events:
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-tapi"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-tapi"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/libogc/powerpc-eabi-tapi"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-tapi"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-tapi"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-tapi"
+      - "/opt/devkitpro/tools/powerpc-eabi-tapi"
       - "/home/akilang/.wakatime/powerpc-eabi-tapi"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-tapi"
       - "/usr/local/bin/powerpc-eabi-tapi"
@@ -843,6 +2099,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-tapi"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-tapi"
       - "/opt/devkitpro/devkitPPC/bin/tapi"
+      - "/opt/devkitpro/portlibs/wii/bin/tapi"
+      - "/opt/devkitpro/portlibs/wii/sbin/tapi"
+      - "/opt/devkitpro/portlibs/wii/tapi"
+      - "/opt/devkitpro/portlibs/ppc/bin/tapi"
+      - "/opt/devkitpro/portlibs/ppc/sbin/tapi"
+      - "/opt/devkitpro/portlibs/ppc/tapi"
+      - "/opt/devkitpro/libogc/bin/tapi"
+      - "/opt/devkitpro/libogc/sbin/tapi"
+      - "/opt/devkitpro/libogc/tapi"
+      - "/opt/devkitpro/devkitPPC/bin/tapi"
+      - "/opt/devkitpro/devkitPPC/sbin/tapi"
+      - "/opt/devkitpro/devkitPPC/tapi"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/tapi"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/tapi"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/tapi"
+      - "/opt/devkitpro/tools/bin/tapi"
+      - "/opt/devkitpro/tools/sbin/tapi"
+      - "/opt/devkitpro/tools/tapi"
       - "/home/akilang/.wakatime/tapi"
       - "/home/akilang/wpilib/2026/jdk/bin/tapi"
       - "/usr/local/bin/tapi"
@@ -871,7 +2145,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -886,7 +2180,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -896,6 +2190,24 @@ events:
       - "powerpc-eabi-gcc-ar"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -910,6 +2222,24 @@ events:
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ar-16.1"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ar-16.1"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ar-16.1"
       - "/usr/local/bin/powerpc-eabi-gcc-ar-16.1"
@@ -923,6 +2253,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ar-16.1"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ar-16.1"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ar-16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ar-16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ar-16"
       - "/usr/local/bin/powerpc-eabi-gcc-ar-16"
@@ -936,6 +2284,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ar-16"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ar-16"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ar16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ar16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ar16"
       - "/usr/local/bin/powerpc-eabi-gcc-ar16"
@@ -964,7 +2330,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -979,7 +2365,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -989,6 +2375,24 @@ events:
       - "powerpc-eabi-gcc-ranlib"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -1003,6 +2407,24 @@ events:
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ranlib-16.1"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ranlib-16.1"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ranlib-16.1"
       - "/usr/local/bin/powerpc-eabi-gcc-ranlib-16.1"
@@ -1016,6 +2438,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ranlib-16.1"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ranlib-16.1"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ranlib-16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ranlib-16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ranlib-16"
       - "/usr/local/bin/powerpc-eabi-gcc-ranlib-16"
@@ -1029,6 +2469,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ranlib-16"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ranlib-16"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ranlib16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ranlib16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ranlib16"
       - "/usr/local/bin/powerpc-eabi-gcc-ranlib16"
@@ -1057,7 +2515,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1075,13 +2553,14 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: true
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
       - "CMakeCXXCompilerId.cpp.in"
     candidate_directories:
       - "/usr/share/cmake/Modules/"
+      - "/opt/devkitpro/cmake/"
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
@@ -1098,7 +2577,13 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
   -
     kind: "message-v1"
     backtrace:
@@ -1109,81 +2594,18 @@ events:
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: /opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++ 
-      Build flags: -mrvl;-mcpu=750;-meabi;-mhard-float
+      Build flags: 
       Id flags:  
       
       The output was:
       0
-      /opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol __app_start; defaulting to 80003f00
+      /opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 018000b8
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
-      The CXX compiler identification could not be found in:
-        /home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/4.3.3/CompilerIdCXX/a.out
-      
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "file"
-    variable: "src_in"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "CMakeCXXCompilerId.cpp.in"
-    candidate_directories:
-      - "/usr/share/cmake/Modules/"
-    found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
-    search_context:
-      ENV{PATH}:
-        - "/home/akilang/.wakatime"
-        - "/home/akilang/wpilib/2026/jdk/bin"
-        - "/home/akilang/.wakatime"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++ 
-      Build flags: -mrvl;-mcpu=750;-meabi;-mhard-float
-      Id flags: -c 
-      
-      The output was:
-      0
-      
-      
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
-      
       The CXX compiler identification is GNU, found in:
-        /home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/4.3.3/CompilerIdCXX/CMakeCXXCompilerId.o
+        /home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/4.3.3/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -1199,7 +2621,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -1209,6 +2631,24 @@ events:
       - "powerpc-eabi-gcc-ar"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -1223,6 +2663,24 @@ events:
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ar-16.1"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ar-16.1"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ar-16.1"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ar-16.1"
       - "/usr/local/bin/powerpc-eabi-gcc-ar-16.1"
@@ -1236,6 +2694,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ar-16.1"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ar-16.1"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ar-16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ar-16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ar-16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ar-16"
       - "/usr/local/bin/powerpc-eabi-gcc-ar-16"
@@ -1249,6 +2725,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ar-16"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ar-16"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ar16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ar16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ar16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ar16"
       - "/usr/local/bin/powerpc-eabi-gcc-ar16"
@@ -1277,7 +2771,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1292,7 +2806,7 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: false
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
@@ -1302,6 +2816,24 @@ events:
       - "powerpc-eabi-gcc-ranlib"
     candidate_directories:
       - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/portlibs/wii/bin/"
+      - "/opt/devkitpro/portlibs/wii/sbin/"
+      - "/opt/devkitpro/portlibs/wii/"
+      - "/opt/devkitpro/portlibs/ppc/bin/"
+      - "/opt/devkitpro/portlibs/ppc/sbin/"
+      - "/opt/devkitpro/portlibs/ppc/"
+      - "/opt/devkitpro/libogc/bin/"
+      - "/opt/devkitpro/libogc/sbin/"
+      - "/opt/devkitpro/libogc/"
+      - "/opt/devkitpro/devkitPPC/bin/"
+      - "/opt/devkitpro/devkitPPC/sbin/"
+      - "/opt/devkitpro/devkitPPC/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/"
+      - "/opt/devkitpro/tools/bin/"
+      - "/opt/devkitpro/tools/sbin/"
+      - "/opt/devkitpro/tools/"
       - "/home/akilang/.wakatime/"
       - "/home/akilang/wpilib/2026/jdk/bin/"
       - "/usr/local/bin/"
@@ -1316,6 +2848,24 @@ events:
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ranlib-16.1"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ranlib-16.1"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ranlib-16.1"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ranlib-16.1"
       - "/usr/local/bin/powerpc-eabi-gcc-ranlib-16.1"
@@ -1329,6 +2879,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ranlib-16.1"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ranlib-16.1"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ranlib-16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ranlib-16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ranlib-16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ranlib-16"
       - "/usr/local/bin/powerpc-eabi-gcc-ranlib-16"
@@ -1342,6 +2910,24 @@ events:
       - "/usr/bin/core_perl/powerpc-eabi-gcc-ranlib-16"
       - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand/powerpc-eabi-gcc-ranlib-16"
       - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/wii/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/wii/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/ppc/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/portlibs/ppc/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/libogc/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/libogc/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/libogc/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/devkitPPC/powerpc-eabi/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/tools/bin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/tools/sbin/powerpc-eabi-gcc-ranlib16"
+      - "/opt/devkitpro/tools/powerpc-eabi-gcc-ranlib16"
       - "/home/akilang/.wakatime/powerpc-eabi-gcc-ranlib16"
       - "/home/akilang/wpilib/2026/jdk/bin/powerpc-eabi-gcc-ranlib16"
       - "/usr/local/bin/powerpc-eabi-gcc-ranlib16"
@@ -1370,7 +2956,27 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/home/akilang/.wakatime"
+        - "/home/akilang/wpilib/2026/jdk/bin"
+        - "/home/akilang/.wakatime"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1380,24 +2986,26 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq"
-      binary: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq"
+      source: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V"
+      binary: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
-      CMAKE_C_FLAGS: "-mrvl -mcpu=750 -meabi -mhard-float"
-      CMAKE_C_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_C_FLAGS: "-mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO"
+      CMAKE_C_FLAGS_DEBUG: "-g -Og -DDEBUG"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib"
+      CMAKE_MODULE_PATH: "/opt/devkitpro/cmake;/opt/devkitpro/cmake"
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/opt/devkitpro/cmake/dkp-rule-overrides.cmake"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq'
+        Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7158a/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_7158a.dir/build.make CMakeFiles/cmTC_7158a.dir/build
-        make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq'
-        Building C object CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj
-        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc   -mrvl -mcpu=750 -meabi -mhard-float    -v -o CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3c6e8/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3c6e8.dir/build.make CMakeFiles/cmTC_3c6e8.dir/build
+        make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V'
+        Building C object CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o
+        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc  -isystem /opt/devkitpro/libogc/include -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc
         Target: powerpc-eabi
@@ -1405,8 +3013,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (devkitPPC) 
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_7158a.dir/'
-         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1 -quiet -v -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections /usr/share/cmake/Modules/CMakeCCompilerABI.c -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_7158a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mrvl -mcpu=750 -meabi -mhard-float -version -o /tmp/ccwfFLPv.s
+        COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_3c6e8.dir/'
+         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1 -quiet -v -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections -D __wii__ -D GEKKO -D NDEBUG -isystem /opt/devkitpro/libogc/include /usr/share/cmake/Modules/CMakeCCompilerABI.c -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_3c6e8.dir/ -dumpbase CMakeCCompilerABI.c -dumpbase-ext .c -mrvl -mcpu=750 -meabi -mhard-float -g -O2 -version -ffunction-sections -fdata-sections -o /tmp/cc9j6ypF.s
         GNU C23 (devkitPPC) version 16.1.0 (powerpc-eabi)
         	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -1415,18 +3023,19 @@ events:
         ignoring duplicate directory "/opt/devkitpro/devkitPPC/powerpc-eabi/include"
         #include "..." search starts here:
         #include <...> search starts here:
+         /opt/devkitpro/libogc/include
          /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include
          /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed
          /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include
         End of search list.
         Compiler executable checksum: 85017ad33d57fa6816c76c8bae3e12c5
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_7158a.dir/'
-         /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj /tmp/ccwfFLPv.s
+        COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_3c6e8.dir/'
+         /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o /tmp/cc9j6ypF.s
         COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/
         LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_7158a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7158a.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.'
+        Linking C executable cmTC_3c6e8.elf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c6e8.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc
         COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper
@@ -1437,8 +3046,8 @@ events:
         gcc version 16.1.0 (devkitPPC) 
         COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/
         LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_7158a' '-dumpdir' 'cmTC_7158a.'
-         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccplwH1w.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_7158a /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o
+        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_3c6e8.elf' '-dumpdir' 'cmTC_3c6e8.elf.'
+         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHqKsRl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_3c6e8.elf /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o -lwiiuse -lbte -logc -lm -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o
         GNU ld (GNU Binutils) 2.46.0.20260210
           Supported emulations:
            elf32ppc
@@ -1449,10 +3058,9 @@ events:
            elf64lppc
            elf32ppcsim
            elf32lppcsim
-        /opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol __app_start; defaulting to 80003f00
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_7158a' '-dumpdir' 'cmTC_7158a.'
-        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc -mrvl -mcpu=750 -meabi -mhard-float   -v CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj -o cmTC_7158a
-        make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq'
+        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_3c6e8.elf' '-dumpdir' 'cmTC_3c6e8.elf.'
+        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -v CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o -o cmTC_3c6e8.elf  -lwiiuse -lbte -logc -lm
+        make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V'
         
       exitCode: 0
   -
@@ -1465,14 +3073,16 @@ events:
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
+          add: [/opt/devkitpro/libogc/include]
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include]
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed]
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include]
         end of search list found
+        collapse include dir [/opt/devkitpro/libogc/include] ==> [/opt/devkitpro/libogc/include]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include] ==> [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed] ==> [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/include]
-        implicit include dirs: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed;/opt/devkitpro/devkitPPC/powerpc-eabi/include]
+        implicit include dirs: [/opt/devkitpro/libogc/include;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed;/opt/devkitpro/devkitPPC/powerpc-eabi/include]
       
       
   -
@@ -1485,13 +3095,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq']
+        ignore line: [Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7158a/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_7158a.dir/build.make CMakeFiles/cmTC_7158a.dir/build]
-        ignore line: [make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq']
-        ignore line: [Building C object CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc   -mrvl -mcpu=750 -meabi -mhard-float    -v -o CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3c6e8/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_3c6e8.dir/build.make CMakeFiles/cmTC_3c6e8.dir/build]
+        ignore line: [make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V']
+        ignore line: [Building C object CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o]
+        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc  -isystem /opt/devkitpro/libogc/include -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc]
         ignore line: [Target: powerpc-eabi]
@@ -1499,8 +3109,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (devkitPPC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_7158a.dir/']
-        ignore line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1 -quiet -v -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections /usr/share/cmake/Modules/CMakeCCompilerABI.c -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_7158a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mrvl -mcpu=750 -meabi -mhard-float -version -o /tmp/ccwfFLPv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_3c6e8.dir/']
+        ignore line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1 -quiet -v -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections -D __wii__ -D GEKKO -D NDEBUG -isystem /opt/devkitpro/libogc/include /usr/share/cmake/Modules/CMakeCCompilerABI.c -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_3c6e8.dir/ -dumpbase CMakeCCompilerABI.c -dumpbase-ext .c -mrvl -mcpu=750 -meabi -mhard-float -g -O2 -version -ffunction-sections -fdata-sections -o /tmp/cc9j6ypF.s]
         ignore line: [GNU C23 (devkitPPC) version 16.1.0 (powerpc-eabi)]
         ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -1509,18 +3119,19 @@ events:
         ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitPPC/powerpc-eabi/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/devkitpro/libogc/include]
         ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include]
         ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed]
         ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 85017ad33d57fa6816c76c8bae3e12c5]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_7158a.dir/']
-        ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj /tmp/ccwfFLPv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_3c6e8.dir/']
+        ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o /tmp/cc9j6ypF.s]
         ignore line: [COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/]
         ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_7158a]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7158a.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.']
+        ignore line: [Linking C executable cmTC_3c6e8.elf]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c6e8.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper]
@@ -1531,13 +3142,13 @@ events:
         ignore line: [gcc version 16.1.0 (devkitPPC) ]
         ignore line: [COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/]
         ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_7158a' '-dumpdir' 'cmTC_7158a.']
-        link line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccplwH1w.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_7158a /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_3c6e8.elf' '-dumpdir' 'cmTC_3c6e8.elf.']
+        link line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHqKsRl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_3c6e8.elf /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o -lwiiuse -lbte -logc -lm -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o]
           arg [/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccplwH1w.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccHqKsRl.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lsysbase] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1551,14 +3162,21 @@ events:
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld] ==> ignore
           arg [--gc-sections] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_7158a] ==> ignore
+          arg [cmTC_3c6e8.elf] ==> ignore
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o] ==> obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o]
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o] ==> obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o]
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o] ==> obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o]
+          arg [-L/opt/devkitpro/libogc/lib/wii] ==> dir [/opt/devkitpro/libogc/lib/wii]
+          arg [-L/opt/devkitpro/portlibs/wii/lib] ==> dir [/opt/devkitpro/portlibs/wii/lib]
+          arg [-L/opt/devkitpro/portlibs/ppc/lib] ==> dir [/opt/devkitpro/portlibs/ppc/lib]
           arg [-L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0] ==> dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0]
           arg [-L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib] ==> dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib]
           arg [-L/opt/devkitpro/devkitPPC/powerpc-eabi/lib] ==> dir [/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
-          arg [CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o] ==> ignore
+          arg [-lwiiuse] ==> lib [wiiuse]
+          arg [-lbte] ==> lib [bte]
+          arg [-logc] ==> lib [ogc]
+          arg [-lm] ==> lib [m]
           arg [-lgcc] ==> lib [gcc]
           arg [--start-group] ==> ignore
           arg [-lsysbase] ==> lib [sysbase]
@@ -1577,20 +3195,21 @@ events:
         ignore line: [   elf64lppc]
         ignore line: [   elf32ppcsim]
         ignore line: [   elf32lppcsim]
-        ignore line: [/opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol __app_start]
-        ignore line: [ defaulting to 80003f00]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_7158a' '-dumpdir' 'cmTC_7158a.']
-        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc -mrvl -mcpu=750 -meabi -mhard-float   -v CMakeFiles/cmTC_7158a.dir/CMakeCCompilerABI.c.obj -o cmTC_7158a]
-        ignore line: [make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-GgEZhq']
+        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_3c6e8.elf' '-dumpdir' 'cmTC_3c6e8.elf.']
+        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -v CMakeFiles/cmTC_3c6e8.dir/CMakeCCompilerABI.o -o cmTC_3c6e8.elf  -lwiiuse -lbte -logc -lm]
+        ignore line: [make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-DkDn5V']
         ignore line: []
         ignore line: []
         collapse obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/lib/crtmain.o]
+        collapse library dir [/opt/devkitpro/libogc/lib/wii] ==> [/opt/devkitpro/libogc/lib/wii]
+        collapse library dir [/opt/devkitpro/portlibs/wii/lib] ==> [/opt/devkitpro/portlibs/wii/lib]
+        collapse library dir [/opt/devkitpro/portlibs/ppc/lib] ==> [/opt/devkitpro/portlibs/ppc/lib]
         collapse library dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0] ==> [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0]
         collapse library dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
         collapse library dir [/opt/devkitpro/devkitPPC/powerpc-eabi/lib] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
-        implicit libs: [gcc;sysbase;c;gcc]
+        implicit libs: [wiiuse;bte;ogc;m;gcc;sysbase;c;gcc]
         implicit objs: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o;/opt/devkitpro/devkitPPC/powerpc-eabi/lib/crtmain.o;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o]
-        implicit dirs: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
+        implicit dirs: [/opt/devkitpro/libogc/lib/wii;/opt/devkitpro/portlibs/wii/lib;/opt/devkitpro/portlibs/ppc/lib;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
         implicit fwks: []
       
       
@@ -1603,25 +3222,27 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X"
-      binary: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X"
+      source: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn"
+      binary: "/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: "-mrvl -mcpu=750 -meabi -mhard-float"
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_FLAGS: "-mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO"
+      CMAKE_CXX_FLAGS_DEBUG: "-g -Og -DDEBUG"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
-      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib"
+      CMAKE_MODULE_PATH: "/opt/devkitpro/cmake;/opt/devkitpro/cmake"
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/opt/devkitpro/cmake/dkp-rule-overrides.cmake"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X'
+        Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3211b/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_3211b.dir/build.make CMakeFiles/cmTC_3211b.dir/build
-        make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X'
-        Building CXX object CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj
-        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++   -mrvl -mcpu=750 -meabi -mhard-float    -v -o CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cfeeb/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_cfeeb.dir/build.make CMakeFiles/cmTC_cfeeb.dir/build
+        make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn'
+        Building CXX object CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o
+        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++  -isystem /opt/devkitpro/libogc/include -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++
         Target: powerpc-eabi
@@ -1629,8 +3250,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (devkitPPC) 
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_3211b.dir/'
-         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1plus -quiet -v -D_GNU_SOURCE -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_3211b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mrvl -mcpu=750 -meabi -mhard-float -version -o /tmp/ccGmHWFs.s
+        COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_cfeeb.dir/'
+         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1plus -quiet -v -D_GNU_SOURCE -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections -D __wii__ -D GEKKO -D NDEBUG -isystem /opt/devkitpro/libogc/include /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_cfeeb.dir/ -dumpbase CMakeCXXCompilerABI.cpp -dumpbase-ext .cpp -mrvl -mcpu=750 -meabi -mhard-float -g -O2 -version -ffunction-sections -fdata-sections -o /tmp/cc58t43H.s
         GNU C++20 (devkitPPC) version 16.1.0 (powerpc-eabi)
         	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -1639,6 +3260,7 @@ events:
         ignoring duplicate directory "/opt/devkitpro/devkitPPC/powerpc-eabi/include"
         #include "..." search starts here:
         #include <...> search starts here:
+         /opt/devkitpro/libogc/include
          /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0
          /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/powerpc-eabi
          /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/backward
@@ -1647,13 +3269,13 @@ events:
          /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include
         End of search list.
         Compiler executable checksum: 353440427c9e96f1e3e24316e5c48785
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_3211b.dir/'
-         /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccGmHWFs.s
+        COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_cfeeb.dir/'
+         /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o /tmp/cc58t43H.s
         COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/
         LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_3211b
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3211b.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.'
+        Linking CXX executable cmTC_cfeeb.elf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfeeb.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++
         COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper
@@ -1664,8 +3286,8 @@ events:
         gcc version 16.1.0 (devkitPPC) 
         COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/
         LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_3211b' '-dumpdir' 'cmTC_3211b.'
-         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQvbMOB.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_3211b /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o
+        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_cfeeb.elf' '-dumpdir' 'cmTC_cfeeb.elf.'
+         /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccisA90n.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_cfeeb.elf /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o -lwiiuse -lbte -logc -lstdc++ -lm -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o
         GNU ld (GNU Binutils) 2.46.0.20260210
           Supported emulations:
            elf32ppc
@@ -1676,10 +3298,9 @@ events:
            elf64lppc
            elf32ppcsim
            elf32lppcsim
-        /opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol __app_start; defaulting to 80003f00
-        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_3211b' '-dumpdir' 'cmTC_3211b.'
-        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++ -mrvl -mcpu=750 -meabi -mhard-float   -v CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_3211b
-        make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X'
+        COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_cfeeb.elf' '-dumpdir' 'cmTC_cfeeb.elf.'
+        /opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++ -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -v CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o -o cmTC_cfeeb.elf  -lwiiuse -lbte -logc -lm
+        make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn'
         
       exitCode: 0
   -
@@ -1692,6 +3313,7 @@ events:
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
+          add: [/opt/devkitpro/libogc/include]
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0]
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/powerpc-eabi]
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/backward]
@@ -1699,13 +3321,14 @@ events:
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed]
           add: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include]
         end of search list found
+        collapse include dir [/opt/devkitpro/libogc/include] ==> [/opt/devkitpro/libogc/include]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/powerpc-eabi] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0/powerpc-eabi]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/backward] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0/backward]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include] ==> [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed] ==> [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed]
         collapse include dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/include]
-        implicit include dirs: [/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0/powerpc-eabi;/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0/backward;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed;/opt/devkitpro/devkitPPC/powerpc-eabi/include]
+        implicit include dirs: [/opt/devkitpro/libogc/include;/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0/powerpc-eabi;/opt/devkitpro/devkitPPC/powerpc-eabi/include/c++/16.1.0/backward;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/include-fixed;/opt/devkitpro/devkitPPC/powerpc-eabi/include]
       
       
   -
@@ -1723,19 +3346,24 @@ events:
       SearchAppBundle: "NEVER"
       CMAKE_FIND_USE_CMAKE_PATH: true
       CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
       - "libstdc++.a"
     candidate_directories:
+      - "/opt/devkitpro/libogc/lib/wii/"
+      - "/opt/devkitpro/portlibs/wii/lib/"
+      - "/opt/devkitpro/portlibs/ppc/lib/"
       - "/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/"
       - "/opt/devkitpro/devkitPPC/powerpc-eabi/lib/"
-      - "/opt/devkitpro/libogc/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/"
-      - "/opt/devkitpro/libogc/opt/devkitpro/devkitPPC/powerpc-eabi/lib/"
-      - "/opt/devkitpro/portlibs/wii/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/"
-      - "/opt/devkitpro/portlibs/wii/opt/devkitpro/devkitPPC/powerpc-eabi/lib/"
     searched_directories:
+      - "/opt/devkitpro/libogc/lib/wii/"
+      - "/opt/devkitpro/libogc/lib/wii/"
+      - "/opt/devkitpro/portlibs/wii/lib/"
+      - "/opt/devkitpro/portlibs/wii/lib/"
+      - "/opt/devkitpro/portlibs/ppc/lib/"
+      - "/opt/devkitpro/portlibs/ppc/lib/"
       - "/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/"
       - "/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/"
     found: "/opt/devkitpro/devkitPPC/powerpc-eabi/lib/libstdc++.a"
@@ -1754,10 +3382,14 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/akilang/wpilib/2026/vscode/VSCode-linux-x64/data/user-data/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/lib"
-      CMAKE_FIND_ROOT_PATH: "/opt/devkitpro/devkitPPC;/opt/devkitpro/libogc;/opt/devkitpro/portlibs/wii"
+      CMAKE_INSTALL_PREFIX: "/opt/devkitpro/portlibs/wii"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/opt/devkitpro/portlibs/wii"
+        - "/opt/devkitpro/portlibs/ppc"
+        - "/opt/devkitpro/libogc"
+        - "/opt/devkitpro/devkitPPC"
+        - "/opt/devkitpro/devkitPPC/powerpc-eabi"
+        - "/opt/devkitpro/tools"
   -
     kind: "message-v1"
     backtrace:
@@ -1768,13 +3400,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X']
+        ignore line: [Change Dir: '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3211b/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_3211b.dir/build.make CMakeFiles/cmTC_3211b.dir/build]
-        ignore line: [make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X']
-        ignore line: [Building CXX object CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++   -mrvl -mcpu=750 -meabi -mhard-float    -v -o CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cfeeb/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_cfeeb.dir/build.make CMakeFiles/cmTC_cfeeb.dir/build]
+        ignore line: [make[1]: Entering directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn']
+        ignore line: [Building CXX object CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o]
+        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++  -isystem /opt/devkitpro/libogc/include -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++]
         ignore line: [Target: powerpc-eabi]
@@ -1782,8 +3414,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (devkitPPC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_3211b.dir/']
-        ignore line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1plus -quiet -v -D_GNU_SOURCE -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_3211b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mrvl -mcpu=750 -meabi -mhard-float -version -o /tmp/ccGmHWFs.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_cfeeb.dir/']
+        ignore line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/cc1plus -quiet -v -D_GNU_SOURCE -D__wii__ -DHW_RVL -ffunction-sections -fdata-sections -D __wii__ -D GEKKO -D NDEBUG -isystem /opt/devkitpro/libogc/include /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -mcall-sysv -quiet -dumpdir CMakeFiles/cmTC_cfeeb.dir/ -dumpbase CMakeCXXCompilerABI.cpp -dumpbase-ext .cpp -mrvl -mcpu=750 -meabi -mhard-float -g -O2 -version -ffunction-sections -fdata-sections -o /tmp/cc58t43H.s]
         ignore line: [GNU C++20 (devkitPPC) version 16.1.0 (powerpc-eabi)]
         ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -1792,6 +3424,7 @@ events:
         ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitPPC/powerpc-eabi/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/devkitpro/libogc/include]
         ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0]
         ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/powerpc-eabi]
         ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include/c++/16.1.0/backward]
@@ -1800,13 +3433,13 @@ events:
         ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 353440427c9e96f1e3e24316e5c48785]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_3211b.dir/']
-        ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccGmHWFs.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_cfeeb.dir/']
+        ignore line: [ /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/as -mppc -many -mbig -o CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o /tmp/cc58t43H.s]
         ignore line: [COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/]
         ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_3211b]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3211b.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' '/opt/devkitpro/libogc/include' '-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o' '-c' '-dumpdir' 'CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.']
+        ignore line: [Linking CXX executable cmTC_cfeeb.elf]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfeeb.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++]
         ignore line: [COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper]
@@ -1817,13 +3450,13 @@ events:
         ignore line: [gcc version 16.1.0 (devkitPPC) ]
         ignore line: [COMPILER_PATH=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/bin/]
         ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/:/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/:/opt/devkitpro/devkitPPC/powerpc-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_3211b' '-dumpdir' 'cmTC_3211b.']
-        link line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQvbMOB.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_3211b /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_cfeeb.elf' '-dumpdir' 'cmTC_cfeeb.elf.']
+        link line: [ /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2 -plugin /opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccisA90n.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lsysbase -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/devkitpro/devkitPPC/powerpc-eabi --eh-frame-hdr -V -dn -Bstatic -T /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld --gc-sections -o cmTC_cfeeb.elf /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0 -L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib -L/opt/devkitpro/devkitPPC/powerpc-eabi/lib CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o -lwiiuse -lbte -logc -lstdc++ -lm -lgcc --start-group -lsysbase -lc --end-group -lgcc /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o /opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o]
           arg [/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/opt/devkitpro/devkitPPC/libexec/gcc/powerpc-eabi/16.1.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccQvbMOB.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccisA90n.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lsysbase] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1837,14 +3470,20 @@ events:
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/rvl.ld] ==> ignore
           arg [--gc-sections] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_3211b] ==> ignore
+          arg [cmTC_cfeeb.elf] ==> ignore
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o] ==> obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o]
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o] ==> obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o]
           arg [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o] ==> obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o]
+          arg [-L/opt/devkitpro/libogc/lib/wii] ==> dir [/opt/devkitpro/libogc/lib/wii]
+          arg [-L/opt/devkitpro/portlibs/wii/lib] ==> dir [/opt/devkitpro/portlibs/wii/lib]
+          arg [-L/opt/devkitpro/portlibs/ppc/lib] ==> dir [/opt/devkitpro/portlibs/ppc/lib]
           arg [-L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0] ==> dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0]
           arg [-L/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib] ==> dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib]
           arg [-L/opt/devkitpro/devkitPPC/powerpc-eabi/lib] ==> dir [/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
-          arg [CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o] ==> ignore
+          arg [-lwiiuse] ==> lib [wiiuse]
+          arg [-lbte] ==> lib [bte]
+          arg [-logc] ==> lib [ogc]
           arg [-lstdc++] ==> lib [SEARCH_STATIC:stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc] ==> lib [gcc]
@@ -1865,21 +3504,22 @@ events:
         ignore line: [   elf64lppc]
         ignore line: [   elf32ppcsim]
         ignore line: [   elf32lppcsim]
-        ignore line: [/opt/devkitpro/devkitPPC/powerpc-eabi/bin/ld: warning: cannot find entry symbol __app_start]
-        ignore line: [ defaulting to 80003f00]
-        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-v' '-o' 'cmTC_3211b' '-dumpdir' 'cmTC_3211b.']
-        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++ -mrvl -mcpu=750 -meabi -mhard-float   -v CMakeFiles/cmTC_3211b.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_3211b]
-        ignore line: [make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9tq90X']
+        ignore line: [COLLECT_GCC_OPTIONS='-mrvl' '-mcpu=750' '-meabi' '-mhard-float' '-ffunction-sections' '-fdata-sections' '-D' '__wii__' '-D' 'GEKKO' '-g' '-O2' '-D' 'NDEBUG' '-L/opt/devkitpro/libogc/lib/wii' '-L/opt/devkitpro/portlibs/wii/lib' '-L/opt/devkitpro/portlibs/ppc/lib' '-v' '-o' 'cmTC_cfeeb.elf' '-dumpdir' 'cmTC_cfeeb.elf.']
+        ignore line: [/opt/devkitpro/devkitPPC/bin/powerpc-eabi-g++ -mrvl -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -D__wii__ -DGEKKO  -g -O2 -DNDEBUG -L/opt/devkitpro/libogc/lib/wii -L/opt/devkitpro/portlibs/wii/lib -L/opt/devkitpro/portlibs/ppc/lib -v CMakeFiles/cmTC_cfeeb.dir/CMakeCXXCompilerABI.o -o cmTC_cfeeb.elf  -lwiiuse -lbte -logc -lm]
+        ignore line: [make[1]: Leaving directory '/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/CMakeScratch/TryCompile-9xxfvn']
         ignore line: []
         ignore line: []
         search lib [SEARCH_STATIC:stdc++] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/lib/libstdc++.a]
         collapse obj [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib/crtmain.o] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/lib/crtmain.o]
+        collapse library dir [/opt/devkitpro/libogc/lib/wii] ==> [/opt/devkitpro/libogc/lib/wii]
+        collapse library dir [/opt/devkitpro/portlibs/wii/lib] ==> [/opt/devkitpro/portlibs/wii/lib]
+        collapse library dir [/opt/devkitpro/portlibs/ppc/lib] ==> [/opt/devkitpro/portlibs/ppc/lib]
         collapse library dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0] ==> [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0]
         collapse library dir [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/../../../../powerpc-eabi/lib] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
         collapse library dir [/opt/devkitpro/devkitPPC/powerpc-eabi/lib] ==> [/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
-        implicit libs: [/opt/devkitpro/devkitPPC/powerpc-eabi/lib/libstdc++.a;m;gcc;sysbase;c;gcc]
+        implicit libs: [wiiuse;bte;ogc;/opt/devkitpro/devkitPPC/powerpc-eabi/lib/libstdc++.a;m;gcc;sysbase;c;gcc]
         implicit objs: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrti.o;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtbegin.o;/opt/devkitpro/devkitPPC/powerpc-eabi/lib/crtmain.o;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/crtend.o;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0/ecrtn.o]
-        implicit dirs: [/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
+        implicit dirs: [/opt/devkitpro/libogc/lib/wii;/opt/devkitpro/portlibs/wii/lib;/opt/devkitpro/portlibs/ppc/lib;/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/16.1.0;/opt/devkitpro/devkitPPC/powerpc-eabi/lib]
         implicit fwks: []
       
       
