@@ -1,0 +1,6 @@
+{
+    "cmake.cmakePath": "/opt/devkitpro/portlibs/wii/bin/powerpc-eabi-cmake",
+    "cmake.configureOnOpen": true,
+    "cmake.generator": "Unix Makefiles",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+}

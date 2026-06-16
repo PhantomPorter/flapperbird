@@ -1,0 +1,3 @@
+/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/WiiHomebrewApp.elf.dir
+/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/edit_cache.dir
+/home/akilang/Documents/wii stuff/flapperbird/build/CMakeFiles/rebuild_cache.dir

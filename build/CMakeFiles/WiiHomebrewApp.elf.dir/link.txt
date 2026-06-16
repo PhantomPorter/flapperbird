@@ -1,0 +1,1 @@
+/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc -mrvl -mcpu=750 -meabi -mhard-float -mrvl -mcpu=750 -meabi -mhard-float -Wl,-Map,WiiHomebrewApp.map CMakeFiles/WiiHomebrewApp.elf.dir/source/main.c.obj -o WiiHomebrewApp.elf  -lwiiuse -lbte -logc -lm
