@@ -1,12 +1,21 @@
 {
     "configurations": [
         {
-            "name": "Wii-CMake",
+            "name": "Wii-Dev",
+            "includePath": [
+                "${workspaceRoot}/**",
+                "/opt/devkitpro/devkitPPC/powerpc-eabi/include/**",
+                "/opt/devkitpro/devkitPPC/lib/gcc/powerpc-eabi/**/include",
+                "/opt/devkitpro/libogc/include/**"
+            ],
+            "defines": [
+                "GEKKO",
+                "__wii__"
+            ],
             "compilerPath": "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
