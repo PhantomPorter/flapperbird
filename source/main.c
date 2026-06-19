@@ -3,16 +3,20 @@
 #include <stdbool.h>
 #include <stdlib.h> 
 #include <SDL/SDL_image.h>
+#include <gccore.h>
+#include "back_jpg.h"
 
 #define SCREEN_WIDTH  640
 #define SCREEN_HEIGHT 480
 #define SCREEN_BPP    16
 
 int main(int argc, char* argv[]) {
+     SYS_STDIO_Report(true); 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0) {
         printf("SDL initialization failed: %s\n", SDL_GetError());
         return -1;
     }
+    
 
     SDL_Joystick* wii_remote = NULL;
     if (SDL_NumJoysticks() > 0) {
@@ -36,7 +40,10 @@ int main(int argc, char* argv[]) {
 
     SDL_Surface *loadedImage = NULL;
     SDL_Surface *optimizedImage = NULL;
-    loadedImage = IMG_Load("back.jpg");
+    SDL_RWops *rw = SDL_RWFromMem(back_jpg, back_jpg_len);
+    if (rw != NULL) {
+        loadedImage = IMG_Load_RW(rw, 1); 
+    }
 
     if (loadedImage != NULL) {
         // Convert to the display format for fast blitting
