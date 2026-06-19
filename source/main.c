@@ -1,6 +1,8 @@
 #include <SDL.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h> 
+#include <SDL/SDL_image.h>
 
 #define SCREEN_WIDTH  640
 #define SCREEN_HEIGHT 480
@@ -24,6 +26,26 @@ int main(int argc, char* argv[]) {
     if (screen == NULL) {
         SDL_Quit();
         return -1;
+    }
+
+    int flags = IMG_INIT_JPG;
+    if ((IMG_Init(flags) & flags) != flags) {
+        printf("IMG_Init: Failed to init required image support!\n");
+        printf("IMG_Init: %s\n", IMG_GetError());
+    }
+
+    SDL_Surface *loadedImage = NULL;
+    SDL_Surface *optimizedImage = NULL;
+    loadedImage = IMG_Load("back.jpg");
+
+    if (loadedImage != NULL) {
+        // Convert to the display format for fast blitting
+        optimizedImage = SDL_DisplayFormat(loadedImage);
+        // Free the original loaded surface
+        SDL_FreeSurface(loadedImage);
+    } else {
+        printf("IMG_Load Error: %s\n", IMG_GetError());
+        // Fallback: If image fails to load, game will just use standard FillRect colors
     }
 
     Uint32 sky_blue = SDL_MapRGB(screen->format, 135, 206, 235);
@@ -57,10 +79,10 @@ int main(int argc, char* argv[]) {
             }
 
             if (event.type == SDL_JOYBUTTONDOWN) {
-                if (event.jbutton.button == 0) {
+                if (event.jbutton.button == 0) { // Wiimote 'A' Button
                     velocity = flap_strength; 
                 }
-                if (event.jbutton.button == 3) {
+                if (event.jbutton.button == 3) { // Wiimote 'Home' Button
                     is_running = false;
                 }
             }
@@ -68,7 +90,13 @@ int main(int argc, char* argv[]) {
 
         velocity += gravity;
         bird_y += velocity;
-        pipe_x -= 1.00f;
+        pipe_x -= pspeed; 
+
+        // Reset pipe if it goes offscreen
+        if (pipe_x < -50) {
+            pipe_x = SCREEN_WIDTH;
+            pipe_gap_y = rand() % (SCREEN_HEIGHT - 200) + 100;
+        }
 
         if (bird_y > SCREEN_HEIGHT - 32) {
             bird_y = SCREEN_HEIGHT - 32;
@@ -79,21 +107,31 @@ int main(int argc, char* argv[]) {
             velocity = 0;
         }
 
-
-
-        SDL_FillRect(screen, NULL, sky_blue);
+        if (optimizedImage != NULL) {
+            SDL_BlitSurface(optimizedImage, NULL, screen, NULL);
+        } else {
+            SDL_FillRect(screen, NULL, sky_blue); // Fallback background color
+        }
 
         SDL_Rect bird_rect = {150, (int)bird_y, 32, 32};
         SDL_FillRect(screen, &bird_rect, bird_yellow);
+
         SDL_Rect pipe_rect_top = { (int)pipe_x, 0, 50, pipe_gap_y - 75 };
         SDL_Rect pipe_rect_bottom = { (int)pipe_x, pipe_gap_y + 75, 50, SCREEN_HEIGHT - (pipe_gap_y + 75) };
         SDL_FillRect(screen, &pipe_rect_top, pipe_green);
         SDL_FillRect(screen, &pipe_rect_bottom, pipe_green);
+
         SDL_Flip(screen);
         SDL_Delay(16); 
     }
 
-    if (SDL_JoystickOpened(0)) {
+    if (optimizedImage != NULL) {
+        SDL_FreeSurface(optimizedImage);
+    }
+    
+    IMG_Quit();
+
+    if (wii_remote && SDL_JoystickOpened(0)) {
         SDL_JoystickClose(wii_remote);
     }
 

@@ -22,21 +22,35 @@ set(WII_PORTLIBS "/opt/devkitpro/portlibs/wii/lib")
 set(WII_OGCLIBS  "/opt/devkitpro/libogc/lib/wii")
 
 # 3. INTERLOCK LINKER STACK WITH EXTENDED AUDIO SUBSYSTEMS
+find_library(JPEG_LIBRARY NAMES jpeg-turbo jpeg PATHS ${DEVKITPRO}/portlibs/ppc/lib ${DEVKITPRO}/portlibs/wii/lib)
+find_library(PNG_LIBRARY NAMES png PATHS ${DEVKITPRO}/portlibs/ppc/lib ${DEVKITPRO}/portlibs/wii/lib)
+find_library(Z_LIBRARY NAMES z PATHS ${DEVKITPRO}/portlibs/ppc/lib ${DEVKITPRO}/portlibs/wii/lib)
+
 target_link_libraries(WiiHomebrewApp 
     PRIVATE 
     -Wl,--start-group
     ${WII_PORTLIBS}/libSDLmain.a
     ${WII_PORTLIBS}/libSDL.a
+    ${WII_PORTLIBS}/libSDL_image.a
+    
+    # Use the dynamic variables found above (this stops the "No rule to make target" error)
+    ${JPEG_LIBRARY}        
+    ${PNG_LIBRARY}         
+    ${Z_LIBRARY}           
+    
     ${WII_OGCLIBS}/libfat.a
     ${WII_OGCLIBS}/libwiiuse.a
     ${WII_OGCLIBS}/libbte.a
     -lwiikeyboard
-    ${WII_OGCLIBS}/libaesnd.a        # <-- Fixes the AESND_ missing references
-    ${WII_OGCLIBS}/libasnd.a         # Standard audio helper routines
+    ${WII_OGCLIBS}/libaesnd.a        
+    ${WII_OGCLIBS}/libasnd.a         
     ${WII_OGCLIBS}/libogc.a
     -lm
     -Wl,--end-group
 )
+
+
+
 
 # Convert the ELF artifact into a Wii-readable DOL executable
 ogc_create_dol(WiiHomebrewApp)
