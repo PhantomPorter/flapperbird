@@ -28,11 +28,15 @@ int main(int argc, char* argv[]) {
 
     Uint32 sky_blue = SDL_MapRGB(screen->format, 135, 206, 235);
     Uint32 bird_yellow = SDL_MapRGB(screen->format, 255, 225, 0);
+    Uint32 pipe_green = SDL_MapRGB(screen->format, 34, 177, 76);
 
     float bird_y = SCREEN_HEIGHT / 2.0f;
     float velocity = 0.0f;
+    float pspeed = 2.0f;
     const float gravity = 0.2f;
     const float flap_strength = -5.0f;
+    float pipe_x = SCREEN_WIDTH;
+    int pipe_gap_y = rand() % (SCREEN_HEIGHT - 200) + 100;
 
     bool is_running = true;
     SDL_Event event;
@@ -64,6 +68,7 @@ int main(int argc, char* argv[]) {
 
         velocity += gravity;
         bird_y += velocity;
+        pipe_x -= 1.00f;
 
         if (bird_y > SCREEN_HEIGHT - 32) {
             bird_y = SCREEN_HEIGHT - 32;
@@ -74,11 +79,16 @@ int main(int argc, char* argv[]) {
             velocity = 0;
         }
 
+
+
         SDL_FillRect(screen, NULL, sky_blue);
 
         SDL_Rect bird_rect = {150, (int)bird_y, 32, 32};
         SDL_FillRect(screen, &bird_rect, bird_yellow);
-
+        SDL_Rect pipe_rect_top = { (int)pipe_x, 0, 50, pipe_gap_y - 75 };
+        SDL_Rect pipe_rect_bottom = { (int)pipe_x, pipe_gap_y + 75, 50, SCREEN_HEIGHT - (pipe_gap_y + 75) };
+        SDL_FillRect(screen, &pipe_rect_top, pipe_green);
+        SDL_FillRect(screen, &pipe_rect_bottom, pipe_green);
         SDL_Flip(screen);
         SDL_Delay(16); 
     }
