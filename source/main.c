@@ -9,6 +9,24 @@
 #define SCREEN_WIDTH  640
 #define SCREEN_HEIGHT 480
 #define SCREEN_BPP    16
+bool check_collision(SDL_Rect* rectA, SDL_Rect* rectB) {
+    int leftA   = rectA->x;
+    int rightA  = rectA->x + rectA->w;
+    int topA    = rectA->y;
+    int bottomA = rectA->y + rectA->h;
+
+    int leftB   = rectB->x;
+    int rightB  = rectB->x + rectB->w;
+    int topB    = rectB->y;
+    int bottomB = rectB->y + rectB->h;
+
+    if (bottomA <= topB)   return false;
+    if (topA >= bottomB)   return false;
+    if (rightA <= leftB)   return false;
+    if (leftA >= rightB)   return false;
+
+    return true;
+}
 
 int main(int argc, char* argv[]) {
      SYS_STDIO_Report(true); 
@@ -114,6 +132,8 @@ int main(int argc, char* argv[]) {
             velocity = 0;
         }
 
+        
+
         if (optimizedImage != NULL) {
             SDL_BlitSurface(optimizedImage, NULL, screen, NULL);
         } else {
@@ -127,7 +147,10 @@ int main(int argc, char* argv[]) {
         SDL_Rect pipe_rect_bottom = { (int)pipe_x, pipe_gap_y + 75, 50, SCREEN_HEIGHT - (pipe_gap_y + 75) };
         SDL_FillRect(screen, &pipe_rect_top, pipe_green);
         SDL_FillRect(screen, &pipe_rect_bottom, pipe_green);
-
+        
+         if (check_collision(&bird_rect, &pipe_rect_top) || check_collision(&bird_rect, &pipe_rect_bottom)) {
+            is_running = false; 
+        }
         SDL_Flip(screen);
         SDL_Delay(16); 
     }
@@ -145,3 +168,5 @@ int main(int argc, char* argv[]) {
     SDL_Quit();
     return 0;
 }
+
+
