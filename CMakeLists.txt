@@ -30,14 +30,21 @@ target_link_libraries(WiiHomebrewApp
     PRIVATE 
     -Wl,--start-group
     ${WII_PORTLIBS}/libSDLmain.a
-    ${WII_PORTLIBS}/libSDL.a
-    ${WII_PORTLIBS}/libSDL_image.a
     
-    # Use the dynamic variables found above (this stops the "No rule to make target" error)
+    /opt/devkitpro/portlibs/wii/lib/libSDL_ttf.a
+    
+    ${WII_PORTLIBS}/libSDL.a
+    
+    ${WII_PORTLIBS}/libSDL_image.a
     ${JPEG_LIBRARY}        
     ${PNG_LIBRARY}         
     ${Z_LIBRARY}           
     
+    /opt/devkitpro/portlibs/ppc/lib/libfreetype.a    
+    -lbrotlidec 
+    -lbrotlicommon
+    -lbz2
+
     ${WII_OGCLIBS}/libfat.a
     ${WII_OGCLIBS}/libwiiuse.a
     ${WII_OGCLIBS}/libbte.a
@@ -48,6 +55,7 @@ target_link_libraries(WiiHomebrewApp
     -lm
     -Wl,--end-group
 )
+
 
 
 
