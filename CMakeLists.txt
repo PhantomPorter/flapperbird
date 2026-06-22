@@ -1,27 +1,26 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10)
 project(WiiHomebrewApp C CXX)
 
-# Gather all source files
-file(GLOB_RECURSE SOURCES "source/*.cpp" "source/*.c")
+if(NOT DEVKITPRO)
+    message(FATAL_ERROR "Please set DEVKITPRO in your environment")
+endif()
 
-# Add executable
-add_executable(WiiHomebrewApp ${SOURCES})
+include(${DEVKITPRO}/cmake/Wii.cmake)
 
-# 1. ADD MANDATORY INITIALIZATION COMPILER FLAGS
-target_compile_definitions(WiiHomebrewApp PRIVATE -D_WII_7Z_)
+set(WII_PORTLIBS "${DEVKITPRO}/portlibs/wii/lib")
+set(WII_OGCLIBS "${DEVKITPRO}/libogc/lib/wii")
 
-# 2. ASSIGN EXTENDED HEADERS SUBDIRECTORIES
-target_include_directories(WiiHomebrewApp SYSTEM PRIVATE 
-    /opt/devkitpro/portlibs/wii/include
-    /opt/devkitpro/portlibs/wii/include/SDL
-    /opt/devkitpro/libogc/include
+include_directories(
+    ${DEVKITPRO}/portlibs/wii/include
+    ${DEVKITPRO}/portlibs/wii/include/SDL
 )
 
-# Helper references
-set(WII_PORTLIBS "/opt/devkitpro/portlibs/wii/lib")
-set(WII_OGCLIBS  "/opt/devkitpro/libogc/lib/wii")
+add_executable(WiiHomebrewApp source/main.cpp)
 
-# 3. INTERLOCK LINKER STACK WITH EXTENDED AUDIO SUBSYSTEMS
+ogc_create_dol(WiiHomebrewApp)
+
+set_target_properties(WiiHomebrewApp PROPERTIES LINKER_LANGUAGE CXX)
+
 find_library(JPEG_LIBRARY NAMES jpeg-turbo jpeg PATHS ${DEVKITPRO}/portlibs/ppc/lib ${DEVKITPRO}/portlibs/wii/lib)
 find_library(PNG_LIBRARY NAMES png PATHS ${DEVKITPRO}/portlibs/ppc/lib ${DEVKITPRO}/portlibs/wii/lib)
 find_library(Z_LIBRARY NAMES z PATHS ${DEVKITPRO}/portlibs/ppc/lib ${DEVKITPRO}/portlibs/wii/lib)
@@ -31,34 +30,26 @@ target_link_libraries(WiiHomebrewApp
     -Wl,--start-group
     ${WII_PORTLIBS}/libSDLmain.a
     
-    /opt/devkitpro/portlibs/wii/lib/libSDL_ttf.a
-    
-    ${WII_PORTLIBS}/libSDL.a
-    
-    ${WII_PORTLIBS}/libSDL_image.a
-    ${JPEG_LIBRARY}        
-    ${PNG_LIBRARY}         
-    ${Z_LIBRARY}           
-    
-    /opt/devkitpro/portlibs/ppc/lib/libfreetype.a    
-    -lbrotlidec 
+    ${WII_PORTLIBS}/libSDL_ttf.a
+    ${DEVKITPRO}/portlibs/ppc/lib/libfreetype.a    
+    -lbrotlidec       
     -lbrotlicommon
     -lbz2
 
+    ${WII_PORTLIBS}/libSDL.a
+    ${WII_PORTLIBS}/libSDL_image.a
+    /opt/devkitpro/portlibs/ppc/lib/libjpeg.a       
+    /opt/devkitpro/portlibs/ppc/lib/libpng.a        
+    /opt/devkitpro/portlibs/ppc/lib/libz.a          
+    
     ${WII_OGCLIBS}/libfat.a
     ${WII_OGCLIBS}/libwiiuse.a
     ${WII_OGCLIBS}/libbte.a
     -lwiikeyboard
-    ${WII_OGCLIBS}/libaesnd.a        
     ${WII_OGCLIBS}/libasnd.a         
+    ${WII_OGCLIBS}/libaesnd.a         
     ${WII_OGCLIBS}/libogc.a
     -lm
+    -lstdc++
     -Wl,--end-group
 )
-
-
-
-
-
-# Convert the ELF artifact into a Wii-readable DOL executable
-ogc_create_dol(WiiHomebrewApp)
