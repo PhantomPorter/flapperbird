@@ -19,6 +19,8 @@ OR
 
 Put the files in the apps folder in a usb/sdcard and launch from the homebrew channel.
 
+Controls: A/B/Shake to flap, 2 to quit
+
 # Credits
 Devkitpro's SDL 1.2 port for Wii
 The music used is Akumajou Densetsu - Beginning
