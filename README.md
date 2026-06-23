@@ -16,6 +16,8 @@ Play here: https://github.com/PhantomPorter/flapperbird/releases/tag/v1.0.0
 Download the files from the releases and either
 
 Boot in [dolphin-emulator](https://dolphin-emu.org/download/) by opening the boot.dol in the same folder as the .elf
+<img width="1158" height="468" alt="image" src="https://github.com/user-attachments/assets/a07d95f7-dbeb-4f30-86d0-753a15db699a" />
+
 <img width="717" height="133" alt="image" src="https://github.com/user-attachments/assets/0304fe71-28ad-48eb-a6e8-b9fd019ae365" />
 
 OR
