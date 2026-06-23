@@ -1,25 +1,31 @@
 #include "back_jpg.h"
 #include "font_ttf.h"
-
-extern "C" {
-#include "music_ogg.h"
-}
+#include <cstdint>      
 #include <SDL.h>
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h>
-#include <asndlib.h>
-#include <gccore.h>
+#include <gccore.h>     
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <malloc.h>
+#include <string.h> 
+#include <malloc.h> 
 
-static unsigned char *aligned_music_buffer = NULL;
-
-#define SCREEN_WIDTH 640
+#define SCREEN_WIDTH  640
 #define SCREEN_HEIGHT 480
-#define SCREEN_BPP 16
+#define SCREEN_BPP    16
+
+extern "C" {
+    #include "music_ogg.h"
+    #include <asndlib.h>
+    #include <wiiuse/wiiuse.h>
+    
+    void WPAD_ScanPads();
+    void WPAD_GForce(int chan, struct gforce_t *gforce); 
+}
+
+static unsigned char* aligned_music_buffer = NULL;
+
 
 bool check_collision(SDL_Rect a, SDL_Rect b) {
   if (a.x + a.w <= b.x)
@@ -31,6 +37,27 @@ bool check_collision(SDL_Rect a, SDL_Rect b) {
   if (a.y >= b.y + b.h)
     return false;
   return true;
+}
+
+void restart_game(float &bird_y, float &velocity, float &pipe_x,
+                  int &pipe_gap_y, int &score, bool &score_counted,
+                  bool &is_playing, unsigned char *aligned_music_buffer,
+                  unsigned int music_wav_len) {
+  ASND_StopVoice(0);
+  if (aligned_music_buffer != NULL) {
+    DCFlushRange((void *)aligned_music_buffer, music_wav_len);
+    ASND_SetInfiniteVoice(0, VOICE_MONO_16BIT, 22050, 0,
+                          (void *)(aligned_music_buffer + 44),
+                          (music_wav_len - 44), 200, 200);
+  }
+
+  bird_y = SCREEN_HEIGHT / 2.0f;
+  velocity = 0;
+  pipe_x = SCREEN_WIDTH;
+  pipe_gap_y = (rand() % (SCREEN_HEIGHT - 200)) + 100;
+  score = 0;
+  score_counted = false;
+  is_playing = true;
 }
 
 int main(int argc, char *argv[]) {
@@ -76,22 +103,19 @@ int main(int argc, char *argv[]) {
     SDL_FreeSurface(loadedImage);
   }
 
- aligned_music_buffer = (unsigned char*)memalign(32, music_wav_len);
-    if (aligned_music_buffer != NULL) {
-        memcpy(aligned_music_buffer, music_wav, music_wav_len);
-        
-       
-        for (unsigned int i = 0; i < music_wav_len; i += 2) {
-            unsigned char temp = aligned_music_buffer[i];
-            aligned_music_buffer[i] = aligned_music_buffer[i + 1];
-            aligned_music_buffer[i + 1] = temp;
-        }
-
-        DCFlushRange((void *)aligned_music_buffer, music_wav_len);
-        
-        ASND_SetInfiniteVoice(0, VOICE_MONO_16BIT, 22050, 0, (void *)(aligned_music_buffer + 44), (music_wav_len - 44), 200, 200);
+  aligned_music_buffer = (unsigned char *)memalign(32, music_wav_len);
+  if (aligned_music_buffer != NULL) {
+    memcpy(aligned_music_buffer, music_wav, music_wav_len);
+    for (unsigned int i = 0; i < music_wav_len; i += 2) {
+      unsigned char temp = aligned_music_buffer[i];
+      aligned_music_buffer[i] = aligned_music_buffer[i + 1];
+      aligned_music_buffer[i + 1] = temp;
     }
-
+    DCFlushRange((void *)aligned_music_buffer, music_wav_len);
+    ASND_SetInfiniteVoice(0, VOICE_MONO_16BIT, 22050, 0,
+                          (void *)(aligned_music_buffer + 44),
+                          (music_wav_len - 44), 200, 200);
+  }
 
   Uint32 sky_blue = SDL_MapRGB(screen->format, 135, 206, 235);
   Uint32 bird_yellow = SDL_MapRGB(screen->format, 255, 225, 0);
@@ -101,8 +125,9 @@ int main(int argc, char *argv[]) {
   float bird_y = SCREEN_HEIGHT / 2.0f;
   float velocity = 0.0f;
   float pspeed = 2.0f;
-  const float gravity = 0.2f;
-  const float flap_strength = -5.0f;
+  const float gravity = 0.25f;
+  const float flap_strength = -5.5f;
+  const float terminal_velocity = 8.0f;
   float pipe_x = SCREEN_WIDTH;
   int pipe_gap_y = rand() % (SCREEN_HEIGHT - 200) + 100;
 
@@ -110,6 +135,12 @@ int main(int argc, char *argv[]) {
   bool score_counted = false;
   bool is_playing = true;
   bool is_running = true;
+
+  int last_axis_value = 0;
+  Uint32 last_shake_time = 0;
+  const int shake_threshold = 12000;
+  const Uint32 shake_cooldown = 200;
+
   SDL_Event event;
 
   while (is_running) {
@@ -125,20 +156,9 @@ int main(int argc, char *argv[]) {
           if (is_playing) {
             velocity = flap_strength;
           } else {
-            ASND_StopVoice(0);
-            if (aligned_music_buffer != NULL) {
-              DCFlushRange((void *)aligned_music_buffer, music_wav_len);
-              ASND_SetInfiniteVoice(0, VOICE_MONO_16BIT, 22050, 0,
-                                    (void *)(aligned_music_buffer + 44),
-                                    (music_wav_len - 44), 200, 200);
-            }
-
-            bird_y = SCREEN_HEIGHT / 2.0f;
-            velocity = 0;
-            pipe_x = SCREEN_WIDTH;
-            score = 0;
-            score_counted = false;
-            is_playing = true;
+            restart_game(bird_y, velocity, pipe_x, pipe_gap_y, score,
+                         score_counted, is_playing, aligned_music_buffer,
+                         music_wav_len);
           }
         }
       }
@@ -148,21 +168,9 @@ int main(int argc, char *argv[]) {
           if (is_playing) {
             velocity = flap_strength;
           } else {
-
-            ASND_StopVoice(0);
-            if (aligned_music_buffer != NULL) {
-              DCFlushRange((void *)aligned_music_buffer, music_wav_len);
-              ASND_SetInfiniteVoice(0, VOICE_MONO_16BIT, 22050, 0,
-                                    (void *)(aligned_music_buffer + 44),
-                                    (music_wav_len - 44), 200, 200);
-            }
-
-            bird_y = SCREEN_HEIGHT / 2.0f;
-            velocity = 0;
-            pipe_x = SCREEN_WIDTH;
-            score = 0;
-            score_counted = false;
-            is_playing = true;
+            restart_game(bird_y, velocity, pipe_x, pipe_gap_y, score,
+                         score_counted, is_playing, aligned_music_buffer,
+                         music_wav_len);
           }
         }
         if (event.jbutton.button == 3 || event.jbutton.button == 11)
@@ -170,14 +178,36 @@ int main(int argc, char *argv[]) {
       }
     }
 
+    WPAD_ScanPads();
+    struct gforce_t real_wii_gforce;
+    WPAD_GForce(0, &real_wii_gforce);
+
+    Uint32 current_time = SDL_GetTicks();
+
+    if (abs(real_wii_gforce.x) > 2.2f || abs(real_wii_gforce.y) > 2.2f ||
+        abs(real_wii_gforce.z) > 2.2f) {
+      if (current_time - last_shake_time > shake_cooldown) {
+        if (is_playing) {
+          velocity = flap_strength;
+        } else {
+          restart_game(bird_y, velocity, pipe_x, pipe_gap_y, score,
+                       score_counted, is_playing, aligned_music_buffer,
+                       music_wav_len);
+        }
+        last_shake_time = current_time;
+      }
+    }
+
     if (is_playing) {
       velocity += gravity;
+      if (velocity > terminal_velocity)
+        velocity = terminal_velocity;
       bird_y += velocity;
       pipe_x -= pspeed;
 
       if (pipe_x < -50) {
         pipe_x = SCREEN_WIDTH;
-        pipe_gap_y = rand() % (SCREEN_HEIGHT - 200) + 100;
+        pipe_gap_y = (rand() % (SCREEN_HEIGHT - 200)) + 100;
         score_counted = false;
       }
 
@@ -191,10 +221,12 @@ int main(int argc, char *argv[]) {
         is_playing = false;
       }
 
-      SDL_Rect bird_rect = {150, (int)bird_y, 32, 32};
-      SDL_Rect pipe_rect_top = {(int)pipe_x, 0, 50, pipe_gap_y - 75};
-      SDL_Rect pipe_rect_bottom = {(int)pipe_x, pipe_gap_y + 75, 50,
-                                   SCREEN_HEIGHT - (pipe_gap_y + 75)};
+      SDL_Rect bird_rect = {150, (Sint16)bird_y, 32, 32};
+      SDL_Rect pipe_rect_top = {(Sint16)pipe_x, 0, 50,
+                                (Uint16)(pipe_gap_y - 75)};
+      SDL_Rect pipe_rect_bottom = {(Sint16)pipe_x, (Sint16)(pipe_gap_y + 75),
+                                   50,
+                                   (Uint16)(SCREEN_HEIGHT - (pipe_gap_y + 75))};
 
       if (check_collision(bird_rect, pipe_rect_top) ||
           check_collision(bird_rect, pipe_rect_bottom)) {
@@ -209,12 +241,12 @@ int main(int argc, char *argv[]) {
       SDL_FillRect(screen, NULL, sky_blue);
     }
 
-    SDL_Rect bird_rect = {150, (int)bird_y, 32, 32};
+    SDL_Rect bird_rect = {150, (Sint16)bird_y, 32, 32};
     SDL_FillRect(screen, &bird_rect, bird_yellow);
 
-    SDL_Rect pipe_rect_top = {(int)pipe_x, 0, 50, pipe_gap_y - 75};
-    SDL_Rect pipe_rect_bottom = {(int)pipe_x, pipe_gap_y + 75, 50,
-                                 SCREEN_HEIGHT - (pipe_gap_y + 75)};
+    SDL_Rect pipe_rect_top = {(Sint16)pipe_x, 0, 50, (Uint16)(pipe_gap_y - 75)};
+    SDL_Rect pipe_rect_bottom = {(Sint16)pipe_x, (Sint16)(pipe_gap_y + 75), 50,
+                                 (Uint16)(SCREEN_HEIGHT - (pipe_gap_y + 75))};
     SDL_FillRect(screen, &pipe_rect_top, pipe_green);
     SDL_FillRect(screen, &pipe_rect_bottom, pipe_green);
 
@@ -256,11 +288,8 @@ int main(int argc, char *argv[]) {
 
   ASND_StopVoice(0);
   ASND_End();
-
-  if (aligned_music_buffer != NULL) {
-    free(aligned_music_buffer); 
-  }
-
+  if (aligned_music_buffer != NULL)
+    free(aligned_music_buffer);
   if (optimizedImage != NULL)
     SDL_FreeSurface(optimizedImage);
   if (wii_remote && SDL_JoystickOpened(0))
@@ -271,6 +300,5 @@ int main(int argc, char *argv[]) {
   TTF_Quit();
   IMG_Quit();
   SDL_Quit();
-
   return 0;
 }
