@@ -24,7 +24,7 @@ Boot in [dolphin-emulator](https://dolphin-emu.org/download/) by opening the boo
 
 OR
 
-If you have a Homebrewed Wii Put the files in the apps folder like below in a usb/sdcard and launch from the homebrew channel.
+If you have a Homebrewed Wii, put the files in the apps folder like below in a usb/sdcard and launch from the homebrew channel.
 
 SD CARD ROOT/apps/WiiHomebrewApp/boot.dol & WiiHomebrewApp.elf
 
