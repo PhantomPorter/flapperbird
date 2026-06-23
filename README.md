@@ -11,13 +11,17 @@ This game has Music, score, and random offsetted pipes. Using SDL to simplify th
 
 # How to play
 Play here: https://github.com/PhantomPorter/flapperbird/releases/tag/v1.0.0
-Download the files and either
 
-Boot in dolphin by opening the boot.dol in the same folder as the .elf
+Download the files from the releases and either
+
+Boot in [dolphin-emulator](https://dolphin-emu.org/download/) by opening the boot.dol in the same folder as the .elf
+<img width="717" height="133" alt="image" src="https://github.com/user-attachments/assets/0304fe71-28ad-48eb-a6e8-b9fd019ae365" />
 
 OR
 
-Put the files in the apps folder in a usb/sdcard and launch from the homebrew channel.
+If you have a Homebrewed Wii Put the files in the apps folder like below in a usb/sdcard and launch from the homebrew channel.
+
+SD CARD ROOT/apps/WiiHomebrewApp/boot.dol & WiiHomebrewApp.elf
 
 Controls: A/B/Shake to flap, 2 to quit
 
