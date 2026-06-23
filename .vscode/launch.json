@@ -3,14 +3,10 @@
     "configurations": [
         {
             "name": "Launch in Dolphin Emulator",
-            "type": "node",
+            "type": "node-terminal", 
             "request": "launch",
-            "runtimeExecutable": "/usr/bin/dolphin-emu",
-            "runtimeArgs": [
-                "-e",
-                "${workspaceRoot}/build/WiiHomebrewApp.dol"
-            ],
-            "preLaunchTask": "CMake Build (Wii)"
+            "command": "/usr/bin/dolphin-emu -e \"${workspaceFolder}/build/WiiHomebrewApp.dol\"",
+            "preLaunchTask": "CMake Build (Wii)" 
         }
     ]
 }
