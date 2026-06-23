@@ -3,7 +3,9 @@
 A Flappy bird clone for the Nintendo Wii
 
 <img width="5570" height="3420" alt="Screenshot_20260622_204509" src="https://github.com/user-attachments/assets/9e38e712-080e-4121-a543-bc72d456ec24" />
-Video: https://github.com/user-attachments/assets/a20eb82a-2450-4bdd-9296-70b1277c9081
+Real Wii Video: https://github.com/user-attachments/assets/a20eb82a-2450-4bdd-9296-70b1277c9081
+
+Emulator Video: https://github.com/user-attachments/assets/b7d6cead-75bd-457f-96b2-148532b77cd1
 
 
 # How it works
